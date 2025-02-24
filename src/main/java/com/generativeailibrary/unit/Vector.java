@@ -1,8 +1,8 @@
-package main.java.com.ses.unit;
+package main.java.com.generativeailibrary.unit;
 
 import java.io.IOException;
 
-import main.java.com.ses.api.EmbeddingProcessListener;
+import main.java.com.generativeailibrary.api.EmbeddingProcessListener;
 
 /**
  * 【SES AIアシスタント】

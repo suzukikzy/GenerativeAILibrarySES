@@ -1,11 +1,11 @@
-package main.java.com.ses.util;
+package main.java.com.generativeailibrary.util;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 import com.amazonaws.services.lambda.runtime.logging.LogLevel;
 
-import main.java.com.ses.unit.DateTime;
+import main.java.com.generativeailibrary.unit.DateTime;
 
 /**
  * Log出力クラス.

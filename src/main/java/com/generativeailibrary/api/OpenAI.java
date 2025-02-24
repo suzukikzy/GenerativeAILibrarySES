@@ -1,4 +1,4 @@
-package main.java.com.ses.api;
+package main.java.com.generativeailibrary.api;
 
 import java.io.BufferedReader;
 import java.io.IOException;

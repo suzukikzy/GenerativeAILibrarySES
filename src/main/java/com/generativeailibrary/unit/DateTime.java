@@ -1,4 +1,4 @@
-package main.java.com.ses.unit;
+package main.java.com.generativeailibrary.unit;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

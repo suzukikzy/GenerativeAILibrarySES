@@ -1,11 +1,11 @@
-package test.java.com.ses.unit;
+package test.java.com.generativeailibrary.unit;
 
 import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
 
-import main.java.com.ses.api.OpenAI;
-import main.java.com.ses.unit.Vector;
+import main.java.com.generativeailibrary.api.OpenAI;
+import main.java.com.generativeailibrary.unit.Vector;
 
 class VectorTest {
     @Test
