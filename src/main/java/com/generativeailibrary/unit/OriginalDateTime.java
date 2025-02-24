@@ -15,7 +15,7 @@ import java.util.Locale;
  * @author 鈴木一矢
  *
  */
-public class DateTime implements Comparable<DateTime> {
+public class OriginalDateTime implements Comparable<OriginalDateTime> {
     // ================================
     // フィールド定義
     // ================================
@@ -30,7 +30,7 @@ public class DateTime implements Comparable<DateTime> {
     /**
      * 現在日時でこのオブジェクトを初期化
      */
-    public DateTime() {
+    public OriginalDateTime() {
         this.dateTime = LocalDateTime.now();
     }
 
@@ -38,7 +38,7 @@ public class DateTime implements Comparable<DateTime> {
      * 文字列の日付情報を解析しこのオブジェクトを初期化する
      * @param date 文字列の日付情報
      */
-    public DateTime(String date) {
+    public OriginalDateTime(String date) {
         if (date == null) {
             this.dateTime = null;
         } else {
@@ -76,7 +76,7 @@ public class DateTime implements Comparable<DateTime> {
     /**
      * 年月日時分秒でこのオブジェクトを初期化する
      */
-    public DateTime(int year, int month, int date, int hour, int minutes, int second) {
+    public OriginalDateTime(int year, int month, int date, int hour, int minutes, int second) {
         this.dateTime = LocalDateTime.of(year, month, date, hour, minutes, second);
     }
 
@@ -84,7 +84,7 @@ public class DateTime implements Comparable<DateTime> {
      * java.sql.Dateをjava.time.LocalDateTimeに変換
      * @param date
      */
-    public DateTime(java.sql.Date date) {
+    public OriginalDateTime(java.sql.Date date) {
         if (date == null) {
             this.dateTime = null;
         } else {
@@ -96,7 +96,7 @@ public class DateTime implements Comparable<DateTime> {
      *  java.sql.Timestampをjava.time.LocalDateTimeに変換
      * @param timestamp
      */
-    public DateTime(java.sql.Timestamp timestamp) {
+    public OriginalDateTime(java.sql.Timestamp timestamp) {
         if (timestamp == null) {
             this.dateTime = null;
         } else {
@@ -116,7 +116,7 @@ public class DateTime implements Comparable<DateTime> {
     }
 
     @Override
-    public int compareTo(DateTime targetDateTime) {
+    public int compareTo(OriginalDateTime targetDateTime) {
         if (this.equals(targetDateTime)) {
             return 0;
         }
@@ -142,7 +142,7 @@ public class DateTime implements Comparable<DateTime> {
      * @return 比較結果
      */
     @SuppressWarnings("unlikely-arg-type")
-    public boolean equals(DateTime dateTime) {
+    public boolean equals(OriginalDateTime dateTime) {
         return this.dateTime != null ? this.dateTime.equals(dateTime) : false ;
     }
 
@@ -259,7 +259,7 @@ public class DateTime implements Comparable<DateTime> {
      * @param 比べたい日付
      * @return 日付の差の日数（負の数が返却された場合はエラー）
      */
-    public int betweenDays(DateTime date) {
+    public int betweenDays(OriginalDateTime date) {
         if (date != null && this.dateTime != null) {
             // 両日付のLocalDateを取得
             LocalDate startDate = this.dateTime.toLocalDate();
@@ -279,7 +279,7 @@ public class DateTime implements Comparable<DateTime> {
      * @param 比べたい日付
      * @return 日付の差の月数（負の数が返却された場合はエラー）
      */
-    public int betweenMonth(DateTime date) {
+    public int betweenMonth(OriginalDateTime date) {
         if (date != null && this.dateTime != null) {
             // 両日付のLocalDateを取得
             LocalDate startDate = this.dateTime.toLocalDate();
@@ -302,7 +302,7 @@ public class DateTime implements Comparable<DateTime> {
      * @param 比べたい日付
      * @return 日付の差の年数（負の数が返却された場合はエラー）
      */
-    public int betweenYear(DateTime date) {
+    public int betweenYear(OriginalDateTime date) {
         if (date != null && this.dateTime != null) {
             Period period = Period.between(this.dateTime.toLocalDate(), date.toLocalDate());
             return period.getYears();

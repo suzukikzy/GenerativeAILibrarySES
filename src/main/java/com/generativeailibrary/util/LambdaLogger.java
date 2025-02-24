@@ -5,7 +5,7 @@ import java.lang.reflect.Modifier;
 
 import com.amazonaws.services.lambda.runtime.logging.LogLevel;
 
-import main.java.com.generativeailibrary.unit.DateTime;
+import main.java.com.generativeailibrary.unit.OriginalDateTime;
 
 /**
  * Log出力クラス.
@@ -111,7 +111,7 @@ public class LambdaLogger {
             objClass = objClass.getSuperclass(); // 親クラスに移動
         }
         stringBuilder.append("\n}");
-        StringBuilder logBuilder = new StringBuilder("[" + level +"]" + new DateTime().toString() + ": " + stringBuilder.toString());
+        StringBuilder logBuilder = new StringBuilder("[" + level +"]" + new OriginalDateTime().toString() + ": " + stringBuilder.toString());
         System.out.println(logBuilder);
     }
 
@@ -122,7 +122,7 @@ public class LambdaLogger {
      * @param message メッセージ
      */
     private static void logMessage(String level, String message) {
-        StringBuilder logBuilder = new StringBuilder("[" + level +"]" + new DateTime().toString() + ": " + message);
+        StringBuilder logBuilder = new StringBuilder("[" + level +"]" + new OriginalDateTime().toString() + ": " + message);
         System.out.println(logBuilder);
     }
 }
